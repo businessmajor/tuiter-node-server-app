@@ -10,7 +10,6 @@ const createTuit = (req, res) => {
     res.json(newTuit);
 }
 
-
 const findTuits = (req, res) => {
     const topic = req.query.topic;
     if (topic) {
@@ -22,6 +21,9 @@ const findTuits = (req, res) => {
     res.json(tuits);
 }
 
+// const findTuits = (req, res) =>
+//     res.json(tuits);
+
 const updateTuit = (req, res) => {
     const tuitdId = req.params.tid;
     const updates = req.body;
@@ -30,16 +32,12 @@ const updateTuit = (req, res) => {
     res.sendStatus(200);
 }
 
-
 const deleteTuit = (req, res) => {
     const tuitdIdToDelete = req.params.tid;
     tuits = tuits.filter((t) =>
         t._id !== tuitdIdToDelete);
     res.sendStatus(200);
 }
-
-
-
 
 export default (app) => {
     app.post('/api/tuits', createTuit);
