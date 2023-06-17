@@ -1,4 +1,4 @@
-import posts from "./tuits.js";
+import posts from "./tuits/tuits.js";
 let tuits = posts;
 
 const createTuit = (req, res) => {
