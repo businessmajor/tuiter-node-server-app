@@ -10,19 +10,8 @@ const createTuit = (req, res) => {
     res.json(newTuit);
 }
 
-const findTuits = (req, res) => {
-    const topic = req.query.topic;
-    if (topic) {
-        const tuitsOfTopic = tuits
-            .filter(t => t.topic === topic);
-        res.json(tuitsOfTopic);
-        return;
-    }
+const findTuits = (req, res) =>
     res.json(tuits);
-}
-
-// const findTuits = (req, res) =>
-//     res.json(tuits);
 
 const updateTuit = (req, res) => {
     const tuitdId = req.params.tid;
