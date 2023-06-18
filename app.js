@@ -17,7 +17,7 @@ app.use(
 app.use(
     cors({
         credentials: true,
-        origin: ["http://localhost:4000", "https://tuiter-node-server-app-bobj.onrender.com/api/tuits"]
+        origin: ["http://localhost:4000", "https://a5--remarkable-fudge-b8f54b.netlify.app/", "https://tuiter-node-server-app-bobj.onrender.com/api/tuits"]
     })
 );
 app.use(express.json());
