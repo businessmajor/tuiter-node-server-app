@@ -26,7 +26,7 @@ const users = [
     password: "1234",
     firstName: "Charlie",
     lastName: "Garcia",
-  },
+  }
 ];
 
 export default users;
