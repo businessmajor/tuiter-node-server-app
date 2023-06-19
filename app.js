@@ -8,16 +8,16 @@ import AuthController from "./users/auth-controller.js";
 
 const app = express()
 app.use(
+    cors({
+        credentials: true,
+        origin: ["http://localhost:3000", "https://a5--remarkable-fudge-b8f54b.netlify.app/", "https://tuiter-node-server-app-bobj.onrender.com/api/tuits"]
+    })
+);
+app.use(
     session({
         secret: "any string",
         resave: false,
         saveUninitialized: true,
-    })
-);
-app.use(
-    cors({
-        // credentials: true,
-        // origin: ["http://localhost:4000", "https://a5--remarkable-fudge-b8f54b.netlify.app/", "https://tuiter-node-server-app-bobj.onrender.com/api/tuits"]
     })
 );
 app.use(express.json());
