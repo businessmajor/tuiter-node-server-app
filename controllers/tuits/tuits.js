@@ -5,7 +5,7 @@ export default [
       "userName": "SpaceX",
       "title": "Tesla CyberTruck lands on Mars and picks up the Curiosity rover on its 6' bed",
       "time": "2h",
-      "image": "spacex.png",
+      "image": "spacex.jpg",
       "liked": true,
       "replies": 123,
       "retuits": 432,
