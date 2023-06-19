@@ -31,7 +31,6 @@ const AuthController = (app) => {
     }
   };
 
-
   const profile = (req, res) => {
     const currentUser = req.session["currentUser"];
     if (!currentUser) {

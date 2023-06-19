@@ -1,5 +1,5 @@
-import people from './users.js'
-let users = people
+import users from './users.js'
+let userData = users
 
 const UserController = (app) => {
    app.get('/api/users', findUsers)
@@ -12,17 +12,17 @@ const UserController = (app) => {
 const findUsers = (req, res) => {
    const type = req.query.type
    if (type) {
-      const usersOfType = users
+      const usersOfType = userData
          .filter(u => u.type === type)
       res.json(usersOfType)
       return
    }
-   res.json(users)
+   res.json(userData)
 }
 
 const findUserById = (req, res) => {
    const userId = req.params.uid;
-   const user = users
+   const user = userData
       .find(u => u._id === userId);
    res.json(user);
 }
@@ -30,28 +30,26 @@ const findUserById = (req, res) => {
 const createUser = (req, res) => {
    const newUser = req.body;
    newUser._id = (new Date()).getTime() + '';
-   users.push(newUser);
+   userData.push(newUser);
    res.json(newUser);
 }
 
 const deleteUser = (req, res) => {
    const userId = req.params['uid'];
-   users = users.filter(usr => usr._id !== userId);
+   userData = userData.filter(usr => usr._id !== userId);
    res.sendStatus(200);
  }
 
  const updateUser = (req, res) => {
    const userId = req.params['uid'];
    const updates = req.body;
-   users = users.map((usr) =>
+   userData = userData.map((usr) =>
      usr._id === userId ?
        {...usr, ...updates} :
        usr
    );
    res.sendStatus(200);
   }
-  
- 
 
 
 export default UserController
