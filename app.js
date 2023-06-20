@@ -1,5 +1,5 @@
 import express from 'express'
-// import cors from 'cors'
+import cors from 'cors'
 import session from "express-session";
 import HelloController from "./controllers/hello-controller.js"
 import UserController from "./users/users-controller.js"
@@ -7,12 +7,12 @@ import TuitsController from "./controllers/tuits-controller.js";
 import AuthController from "./users/auth-controller.js";
 
 const app = express()
-// app.use(
-//     cors({
-//         credentials: true,
-//         origin: ["http://localhost:3000", "https://a5--remarkable-fudge-b8f54b.netlify.app"]
-//     })
-// );
+app.use(
+    cors({
+        credentials: true,
+        origin: ["http://localhost:3000", "https://a5--remarkable-fudge-b8f54b.netlify.app"]
+    })
+);
 app.use(
     session({
         secret: "any string",
