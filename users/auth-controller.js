@@ -15,19 +15,14 @@ const AuthController = (app) => {
   };
 
   const login = async (req, res) => {
-    try {
-      const username = req.body.username;
-      const password = req.body.password;
-      const user = await usersDao.findUserByCredentials(username, password);
-      if (user) {
-        req.session.currentUser = user;
-        res.json(user);
-      } else {
-        res.sendStatus(404);
-      }
-    } catch (error) {
-      console.error(error);
-      res.sendStatus(500);
+    const username = req.body.username;
+    const password = req.body.password;
+    const user = usersDao.findUserByCredentials(username, password);
+    if (user) {
+      req.session["currentUser"] = user;
+      res.json(user);
+    } else {
+      res.sendStatus(404);
     }
   };
 
@@ -46,7 +41,6 @@ const AuthController = (app) => {
   };
 
   const update = (req, res) => { };
-
 
   app.post("/api/users/register", register);
   app.post("/api/users/login", login);
