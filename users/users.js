@@ -9,21 +9,21 @@ const users = [
   {
     _id: "1",
     username: "alice",
-    password: "1234",
+    password: "123",
     firstName: "Alice",
     lastName: "Wonderland",
   },
   {
     _id: "2",
     username: "bob",
-    password: "1234",
+    password: "123",
     firstName: "Bob",
     lastName: "Marley",
   },
   {
     _id: "3",
     username: "charlie",
-    password: "1234",
+    password: "123",
     firstName: "Charlie",
     lastName: "Garcia",
   }

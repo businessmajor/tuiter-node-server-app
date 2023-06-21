@@ -2,6 +2,11 @@
 // let tuits = posts;
 import * as tuitsDao from './tuits/tuits-dao.js';
 
+const findTuits = async (req, res) => {
+    const tuits = await tuitsDao.findTuits()
+    res.json(tuits);
+}
+
 const createTuit = async (req, res) => {
     const newTuit = req.body;
     // newTuit._id = (new Date()).getTime() + '';
@@ -10,11 +15,6 @@ const createTuit = async (req, res) => {
     // tuits.push(newTuit);
     const insertedTuit = await tuitsDao.createTuit(newTuit);
     res.json(insertedTuit);
-}
-
-const findTuits = async (req, res) => {
-    const tuits = await tuitsDao.findTuits()
-    res.json(tuits);
 }
 
 const updateTuit = async (req, res) => {
